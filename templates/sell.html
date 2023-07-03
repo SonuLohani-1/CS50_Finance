@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <div class="mb-3">
+            <select class="form-control mx-auto w-auto" id="symbol" name="symbol">
+                <option value="" selected disabled>Select Stock</option>
+                <!-- Jinja for loop will come here to visit all the stocks -->
+                {% for row in user_portfolio %}
+                <option value={{row.stock_name}}>{{row.stock_name}}</option>
+                {% endfor %}
+                <!-- Jinja for loop will stop here -->
+            </select>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="units" name="shares" placeholder="shares" type="number" min="1">
+        </div>
+        <button class="btn btn-primary" type="submit">Sell Now!</button>
+    </form>
+{% endblock %}

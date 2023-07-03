@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-success table-striped">
+        <tr>
+            <th>Stock Name</th>
+            <th>Buy(+)/Sell(-)</th>
+            <th>Price</th>
+            <th>Time</th>
+            <th>Date</th>
+        </tr>
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction.stock_name }}</td>
+            <td>{{ transaction.action }}</td>
+            <td>{{transaction.price}}</td>
+            <td>{{ transaction.time }}</td>
+            <td>{{ transaction.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

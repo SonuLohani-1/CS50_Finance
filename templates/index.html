@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+                <th>Buy</th>
+                <th>Sell</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in range(user_portfolio|length) %}
+            <tr>
+                <td>{{ user_portfolio[i].stock_name }}</td>
+                <td>{{ user_portfolio[i].units }}</td>
+                <td>{{ curr_price[i] | round(2) }}</td>
+                <td>{{ (curr_price[i] * user_portfolio[i].units) | usd }}</td>
+                <td>
+                    <form action="/buy" method="post">
+                        <input class="form-control" type="hidden" name="symbol" value="{{ user_portfolio[i].stock_name }}">
+                        <div class="input-group">
+                            <input type="number" name="shares" min="1" step="1" required>
+                            <button class="btn btn-primary" type="submit">Buy</button>
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    <form action="/sell" method="post">
+                        <input class="form-control" type="hidden" name="symbol" value="{{ user_portfolio[i].stock_name }}">
+                        <div class="input-group">
+                            <input type="number" name="shares" min="1" step="1" required>
+                            <button class="btn btn-danger" type="submit">Sell</button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Cash</strong></td>
+                <td>{{ cash | usd }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Total</strong></td>
+                <td>{{ (total_share_price + cash) | usd }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
