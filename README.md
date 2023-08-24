@@ -13,7 +13,7 @@ Track your stock portfolio's performance and make informed investment decisions 
 
 ## About
 
-Finance is a web application designed to help you manage and analyze your stock investments. It allows you to keep a record of your stock purchases, track their current market values, and view the overall performance of your portfolio. This project was developed as part of the CS50 Finance Week 8 task, focusing on integrating real-time stock data and creating an interactive user experience.
+Finance is a web application designed to help you manage and analyze your stock investments. It allows you to keep a record of your stock purchases, track their current market values, and view the overall performance of your portfolio.
 
 ## Features
 
