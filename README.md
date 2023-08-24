@@ -25,7 +25,7 @@ Stock Portfolio Tracker is a web application designed to help you manage and ana
 - **Responsive Design:** Enjoy a seamless experience across different devices with a mobile-friendly layout.
 
 ## Installation
-- clone repo : `git clone ***add line here***`
+- clone repo : `git clone git@github.com:SonuLohani-1/Finance.git`
 - setup miniconda
 - create environment: `conda create -n finance python=3.9`
 - activate environment: `conda activate finance`
