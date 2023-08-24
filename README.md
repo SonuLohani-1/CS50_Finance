@@ -1,6 +1,6 @@
-# Stock Portfolio Tracker
+# Finance
 
-Track your stock portfolio's performance and make informed investment decisions.
+Track your stock portfolio's performance and make informed investment decisions using finance app.
 
 ## Table of Contents
 
